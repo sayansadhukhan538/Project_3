@@ -34,8 +34,7 @@ const Signup = () => {
         toast.success(response.message, {
           duration: 4000,
         });
-        localStorage.setItem("token", JSON.stringify(response.data.token));
-        navigate("/}");
+        navigate("/");
       } else {
         toast.error(response.message, {
           duration: 4000,

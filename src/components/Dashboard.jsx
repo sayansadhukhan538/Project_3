@@ -1,23 +1,30 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import "./Dashboard.css";
 import { Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import {dashboardNetworkCall} from '../services/dashboard.service'
 const Dashboard = () => {
   const [data, setData] = useState([]);
-  async function apiCall() {
-    try {
-      const res = await axios("https://reqres.in/api/users?page=2");
-      setData(res.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // async function apiCall() {
+  //   try {
+  //     const res = await axios("https://reqres.in/api/users?page=2");
+  //     setData(res.data.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
   useEffect(() => {
-    apiCall();
-    console.log(data);
+   async function apiCall(){
+    const res = await dashboardNetworkCall();
+    if(res.success){
+      setData(res.data);
+    }
+   }
+   apiCall();
   }, []);
+
   function logOut() {
     localStorage.removeItem("token");
     toast.success('Log Out done', {

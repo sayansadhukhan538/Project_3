@@ -35,15 +35,17 @@ const Login = () => {
       toast.error("Invalid Email ID! ");
     } else {
       const response = await logIn(formData);
-      if (response.isSuccess) {
+      console.log(response, response.isSuccess)
+      if (response.isSuccess===true) {
         toast.success(response.message, {
           duration: 4000,
         });
         localStorage.setItem("token", JSON.stringify(response.data.token));
         navigate("/dashboard");
-      } else {
+      } 
+      else {
         toast.error(response.message, {
-          duration: 4000, // Optional: Set the duration (in milliseconds)
+          duration: 4000,
         });
       }
       // try {

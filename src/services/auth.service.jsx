@@ -18,7 +18,7 @@ const signUp = async (authData) => {
     return Promise.resolve({
       isSuccess: false,
       data: null,
-      message: "Incorrect credentials!",
+      message: "Invalid credentials!",
     });
   }
 };
