@@ -41,8 +41,7 @@
 
 }
 #p{
-  display: flex;
-  justify-content: center;
+  
   margin-bottom: 10px;
 }
 .input button{
@@ -51,7 +50,7 @@
     background-color: #f678ff;
     cursor: pointer;
     color: #ffffff;
-    transition: 0.5 ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 .gender{
   color: #000000;
@@ -68,11 +67,12 @@
 position: absolute;
 left: 270px;
 top: 32px;
-color: #75affa;
+color: #006efd;
 cursor: pointer;
 }
 #rememberMe{
   display: inline;
+  margin-right: 10px;
 }
 #submit{
   margin-top: 36px;
@@ -81,7 +81,13 @@ justify-content: center;
 align-items: center;
 }
 button:hover{
-  box-shadow: 0 0#ed00fe;
+  box-shadow: 6px 6px 10px#ed00fe82;
+  border: 1px solid #ed00fe;
+}
+.other p{
+  color: #000000;
+  display: inline;
+  margin-right: 10px;
 }
 
 
