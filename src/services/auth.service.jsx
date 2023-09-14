@@ -31,7 +31,7 @@ const logIn = async (authData) => {
     return Promise.resolve({
       isSuccess: true,
       data: response.data,
-      message: "Loged In successfully.",
+      message: "Logged In successfully.",
     });
   } catch (error) {
     console.log(error);

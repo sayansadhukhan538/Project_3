@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Dashboard.css";
 import { Link } from "react-router-dom";
-
+import { toast } from "react-hot-toast";
 const Dashboard = () => {
   const [data, setData] = useState([]);
   async function apiCall() {
@@ -20,6 +20,9 @@ const Dashboard = () => {
   }, []);
   function logOut() {
     localStorage.removeItem("token");
+    toast.success('Log Out done', {
+        duration: 4000,
+      });
   }
   return (
     <div className="main">
