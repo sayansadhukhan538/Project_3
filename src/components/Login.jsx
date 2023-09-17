@@ -1,16 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logIn } from "../services/auth.service";
 import { toast } from "react-hot-toast";
 
 const Login = () => {
-  const token = JSON.parse(localStorage.getItem("token"));
-  useEffect(() => {
-    if (token) {
-      navigate("/dashboard");
-    }
-  }, []);
+
+  
   const navigate = useNavigate();
   const [formData, setFormdata] = useState({
     email: "",
